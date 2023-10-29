@@ -2,12 +2,15 @@ const express = require("express");
 const cors = require("cors");
 const connectDb = require("./config/db");
 require("dotenv").config();
+const credentials = require("./middleware/credentials");
+const corsOptions = require("./config/corsOptions");
 
 const PORT = process.env.PORT || 3000;
 const app = express();
 connectDb();
 
-app.use(cors());
+app.use(credentials);
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use("/", require("./api/health"));

@@ -8,11 +8,15 @@ const unitSchema = new mongoose.Schema(
 		},
 		beds: {
 			type: Number,
-			default: 1,
+			default: 0,
 		},
 		baths: {
 			type: Number,
-			default: 1,
+			default: 0,
+		},
+		rent: {
+			type: Number,
+			default: 0,
 		},
 	},
 	{
