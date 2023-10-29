@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { unitSchema } = require("./unit/model");
+const { userSchema } = require("../user/model");
 
 const propertySchema = new mongoose.Schema(
 	{
@@ -7,11 +8,8 @@ const propertySchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		owner: {
-			type: mongoose.Schema.Types.ObjectId,
-			ref: "User",
-			required: true,
-		},
+		owners: [userSchema],
+		managers: [userSchema],
 		type: {
 			type: String,
 			enum: ["Single Family", "Duplex", "Multi Family"],
