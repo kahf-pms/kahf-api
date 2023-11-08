@@ -42,7 +42,7 @@ const propertySchema = new mongoose.Schema(
 		},
 		purchaseDate: {
 			type: String,
-			default: "01-01-2000",
+			default: "2000-01-01",
 		},
 		purchasePrice: {
 			type: Number,
