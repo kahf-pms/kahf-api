@@ -33,16 +33,20 @@ const propertySchema = new mongoose.Schema(
 			},
 		},
 		size: {
-			type: Number,
+			type: String,
+			default: "0",
 		},
-		yearBult: {
-			type: Number,
+		yearBuilt: {
+			type: String,
+			default: "2000",
 		},
 		purchaseDate: {
-			type: Date,
+			type: String,
+			default: "01-01-2000",
 		},
 		purchasePrice: {
 			type: Number,
+			default: 0,
 		},
 		units: [unitSchema],
 	},
